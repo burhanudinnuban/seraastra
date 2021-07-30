@@ -9,11 +9,11 @@ import {texts} from '../../configs/styles/texts';
 
 const Login = ({navigation}) => {
   const dispatch = useDispatch();
+
   const [email, setemail] = useState('');
   const [password, setpassword] = useState('');
-  const userData = user();
 
-  useEffect(() => {}, []);
+  const userData = user();
 
   function didLogin() {
     if (email === '') {
@@ -48,6 +48,7 @@ const Login = ({navigation}) => {
           value={email}
           onChangeText={e => setemail(e)}
           onPressIconRight={() => setemail('')}
+          placeholder={'Type your email here...'}
           iconRight={
             email ? (
               <ICRemoveRed width={display.wp(7)} height={display.wp(7)} />
@@ -64,8 +65,10 @@ const Login = ({navigation}) => {
         <Gap hp={display.hp(1)} />
         <TextInputCustom
           value={password}
+          secureTextEntry={true}
           onChangeText={e => setpassword(e)}
           onPressIconRight={() => setpassword('')}
+          placeholder={'Type your password here...'}
           iconRight={
             password ? (
               <ICRemoveRed width={display.wp(7)} height={display.wp(7)} />

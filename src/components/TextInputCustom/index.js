@@ -21,6 +21,7 @@ const TextInputCustom = ({
   onPressIconRight,
   onPressIconLeft,
   onEndEditing,
+  secureTextEntry,
 }) => {
   return (
     <View
@@ -48,6 +49,7 @@ const TextInputCustom = ({
             placeholderTextColor={
               placeholderTextColor ? placeholderTextColor : colors.silver
             }
+            secureTextEntry={secureTextEntry}
             onChangeText={onChangeText}
             value={value}
             numberOfLines={numberOfLines}
@@ -61,6 +63,7 @@ const TextInputCustom = ({
               onPressIn || onPressOut ? true : editable ? editable : true
             }
             onPressIn={onPressIn}
+            secureTextEntry={secureTextEntry}
             onPressOut={onPressOut}
             allowFontScaling={false}
             style={texts.secondary}
@@ -68,6 +71,7 @@ const TextInputCustom = ({
             placeholderTextColor={
               placeholderTextColor ? placeholderTextColor : colors.silver
             }
+            autoCapitalize="none"
             onChangeText={onChangeText}
             value={value}
             numberOfLines={numberOfLines}
