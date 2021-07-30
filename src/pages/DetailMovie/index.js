@@ -37,13 +37,13 @@ const DetailMovie = ({navigation, route}) => {
 
   useEffect(() => {
     dispatch(requestGetDetailMovie(detail.id));
-    const index = dataFavourites.findIndex(item => item.id === DetailMovies.id);
+    const index = dataFavourites.findIndex(item => item.id === detail.id);
     if (index < 0) {
       setfavourite(false);
     } else {
       setfavourite(true);
     }
-  }, [dispatch, detail.id, dataFavourites, DetailMovies.id]);
+  }, [dispatch, detail.id, dataFavourites]);
 
   function openBrowser() {
     Linking.canOpenURL(DetailMovies.homepage).then(supported => {
@@ -176,7 +176,10 @@ const DetailMovie = ({navigation, route}) => {
                   Production Companies
                 </Text>
                 {DetailMovies.production_companies.map(item => (
-                  <Text allowFontScaling={false} style={texts.secondaryBold}>
+                  <Text
+                    key={item.id.toString()}
+                    allowFontScaling={false}
+                    style={texts.secondaryBold}>
                     {item.name}
                   </Text>
                 ))}

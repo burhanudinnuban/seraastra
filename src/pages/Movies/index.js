@@ -62,6 +62,7 @@ const Movies = ({navigation}) => {
           {Moviess.length !== 0 ? (
             <FlatList
               data={Moviess}
+              key={item => item.id.toString()}
               renderItem={({item}) => (
                 <TouchableOpacity
                   style={{

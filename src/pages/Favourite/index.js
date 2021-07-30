@@ -55,6 +55,7 @@ const Favourite = ({navigation}) => {
       {Favourites.length !== 0 ? (
         <FlatList
           data={Favourites}
+          key={item => item.id.toString()}
           renderItem={({item}) => (
             <TouchableOpacity
               style={{

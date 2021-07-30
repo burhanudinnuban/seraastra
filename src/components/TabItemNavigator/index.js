@@ -1,11 +1,11 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, TouchableOpacity, View} from 'react-native';
 import {colors, display} from '../../constants';
 import {
-  ICBooksPrimary,
-  ICBooksSecondary,
-  ICHomePrimary,
-  ICHomeSecondary,
+  ICListPrimary,
+  ICListWhite,
+  ICStarPrimary,
+  ICStarWhite,
 } from '../../assets';
 
 const TabItemNavigator = ({title, active, onPress, onLongPress}) => {
@@ -14,11 +14,11 @@ const TabItemNavigator = ({title, active, onPress, onLongPress}) => {
       case 'Movies':
       default:
         return (
-          <ICHomePrimary width={display.hp(3.5)} height={display.hp(3.5)} />
+          <ICListPrimary width={display.hp(3.5)} height={display.hp(3.5)} />
         );
       case 'Favourite':
         return (
-          <ICBooksPrimary width={display.hp(3.5)} height={display.hp(3.5)} />
+          <ICStarPrimary width={display.hp(3.5)} height={display.hp(3.5)} />
         );
     }
   };
@@ -27,13 +27,9 @@ const TabItemNavigator = ({title, active, onPress, onLongPress}) => {
     switch (title) {
       case 'Movies':
       default:
-        return (
-          <ICHomeSecondary width={display.hp(4.5)} height={display.hp(4.5)} />
-        );
+        return <ICListWhite width={display.hp(4.5)} height={display.hp(4.5)} />;
       case 'Favourite':
-        return (
-          <ICBooksSecondary width={display.hp(4.5)} height={display.hp(4.5)} />
-        );
+        return <ICStarWhite width={display.hp(4.5)} height={display.hp(4.5)} />;
     }
   };
 
