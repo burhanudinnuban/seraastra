@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from 'react';
-import {Text, View} from 'react-native';
+import {Alert, Text, View} from 'react-native';
 import {ButtonOutline, Gap, TextInputCustom} from '../../components';
 import {display, reducer, user} from '../../constants';
 import pages from '../../configs/styles/pages';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {ICRemoveRed} from '../../assets';
 import {texts} from '../../configs/styles/texts';
 
@@ -17,15 +17,15 @@ const Login = ({navigation}) => {
 
   function didLogin() {
     if (email === '') {
-      alert('email tidak boleh kosong');
+      Alert.alert('email tidak boleh kosong');
     } else if (password === '') {
-      alert('password tidak boleh kosong');
+      Alert.alert('password tidak boleh kosong');
     } else {
       if (userData.email === email && userData.password === password) {
         dispatch({type: reducer.ISLOGIN, value: true});
         navigation.navigate('MainApp');
       } else {
-        alert('email atau password anda salah');
+        Alert.alert('email atau password anda salah');
       }
     }
   }

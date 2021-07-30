@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import {
   Dimensions,
-  Image,
   ScrollView,
   StatusBar,
   StyleSheet,
@@ -9,7 +8,7 @@ import {
   View,
 } from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
-import {ICBooksPrimary, ICWritingPrimary, ICSearchPrimary} from '../../assets';
+import {ICSearchPrimary, ICCameraPrimary, ICAlbumPrimary} from '../../assets';
 import {ButtonOutline, Gap, PaginationOnBording} from '../../components';
 import {texts} from '../../configs/styles/texts';
 import {colors, display, reducer} from '../../constants';
@@ -18,6 +17,7 @@ const {width} = Dimensions.get('window');
 
 const OnBoarding = ({navigation}) => {
   const dispatch = useDispatch();
+
   const global = useSelector(state => state.global);
 
   const onSelesai = () => {
@@ -62,26 +62,26 @@ const OnBoarding = ({navigation}) => {
         <View style={styles.conatiner}>
           <View style={styles.content}>
             {/* <Image source={LSOnBoarding1} style={styles.imageIlustasi} /> */}
-            <ICBooksPrimary width={display.wp(50)} height={display.wp(50)} />
+            <ICCameraPrimary width={display.wp(50)} height={display.wp(50)} />
             <Gap hp={display.hp(5)} />
             <Text allowFontScaling={false} style={styles.title2()}>
               Welcome to
             </Text>
             <Text allowFontScaling={false} style={texts.primaryExtraLargeBold}>
-              seraastra
+              SERA ASTRA
             </Text>
           </View>
         </View>
         <View style={styles.conatiner}>
           <View style={styles.content}>
             {/* <Image source={LSOnBoarding2} style={styles.imageIlustasi} /> */}
-            <ICWritingPrimary width={display.wp(50)} height={display.wp(50)} />
+            <ICAlbumPrimary width={display.wp(50)} height={display.wp(50)} />
             <Gap hp={25} />
             <Text allowFontScaling={false} style={styles.title}>
-              You can search Movies and company
+              You can play Movies and free
             </Text>
             <Text allowFontScaling={false} style={texts.primaryExtraLargeBold}>
-              seraastra
+              SERA ASTRA
             </Text>
           </View>
         </View>
@@ -91,10 +91,10 @@ const OnBoarding = ({navigation}) => {
             <ICSearchPrimary width={display.wp(50)} height={display.wp(50)} />
             <Gap hp={25} />
             <Text allowFontScaling={false} style={styles.title}>
-              You can apply to every Movies open
+              You can search every Movies
             </Text>
             <Text allowFontScaling={false} style={texts.primaryExtraLargeBold}>
-              seraastra
+              SERA ASTRA
             </Text>
           </View>
         </View>

@@ -6,6 +6,7 @@ import {
   Linking,
   ScrollView,
   ActivityIndicator,
+  Alert,
 } from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
 import {
@@ -49,7 +50,7 @@ const DetailMovie = ({navigation, route}) => {
       if (supported) {
         Linking.openURL(DetailMovies.homepage);
       } else {
-        alert("Don't know how to open URI: " + DetailMovies.homepage);
+        Alert.alert("Don't know how to open URI: " + DetailMovies.homepage);
       }
     });
   }

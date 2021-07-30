@@ -6,10 +6,10 @@ import {ICBooksPrimary} from '../../assets';
 import {display} from '../../constants';
 import {Gap} from '../../components';
 import {useSelector} from 'react-redux';
-import {setDataMovies} from '../../configs/redux/action';
 
 const Splash = ({navigation}) => {
   const global = useSelector(state => state.global);
+
   useEffect(() => {
     setTimeout(() => {
       if (!global.first_launch) {
@@ -29,7 +29,7 @@ const Splash = ({navigation}) => {
       <ICBooksPrimary width={display.wp(20)} height={display.wp(20)} />
       <Gap hp={5} />
       <Text allowFontScaling={false} style={texts.primaryExtraLargeBold}>
-        seraastra
+        SERA ASTRA
       </Text>
     </View>
   );
